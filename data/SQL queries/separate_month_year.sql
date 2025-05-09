@@ -1,4 +1,4 @@
-UPDATE burglary_data
+UPDATE raw_data
 SET
   year  = CAST(SUBSTR(Month,1,4) AS INTEGER),
   month = CAST(SUBSTR(Month,6,2) AS INTEGER);
