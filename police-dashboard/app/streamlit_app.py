@@ -66,7 +66,7 @@ def render_choropleth(geo_df: gpd.GeoDataFrame,
 
 # --- App ---
 st.set_page_config(layout="wide")
-st.title("📊 London Residential Burglary: Ward → LSOA Drill-Down")
+st.title("Burglary: Ward → LSOA Heatmap")
 
 # Sidebar controls
 start_year, end_year = st.sidebar.select_slider(
