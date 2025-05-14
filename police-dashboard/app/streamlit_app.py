@@ -9,7 +9,7 @@ import numpy as np
 
 # --- Config ---
 BASE_DIR    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-GPKG_PATH   = os.path.join(BASE_DIR, "data", "london_simplified.gpkg")
+GPKG_PATH   = os.path.join(BASE_DIR,"data", "london_simplified.gpkg")
 LSOA_CSV    = os.path.join(BASE_DIR, "data", "lsoa_counts.csv")
 WARD_CSV    = os.path.join(BASE_DIR, "data", "ward_counts.csv")
 
@@ -70,7 +70,7 @@ st.title("Burglary: Ward → LSOA Heatmap")
 
 # Sidebar controls
 start_year, end_year = st.sidebar.select_slider(
-    "Year Range", options=list(range(2013,2026)), value=(2018,2022)
+    "Year Range", options=list(range(2013,2026)), value=(2019,2022)
 )
 
 # Load precomputed data
