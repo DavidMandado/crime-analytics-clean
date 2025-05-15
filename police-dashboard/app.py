@@ -62,7 +62,7 @@ app.layout = html.Div([
 
     # Sidebar
     html.Div(id="sidebar", children=[
-        html.H2("Filters", style={"margin-top": "0"}), html.Hr(),
+        html.H2("Filters", style={"margin-top": "20px"}), html.Hr(),
         # Data View
         html.Div([html.Label("Data View"),
             dcc.RadioItems(id="data-mode",
