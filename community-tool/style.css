@@ -1,0 +1,92 @@
+/* PAGE LAYOUT */
+body { margin:0; font-family:sans-serif; background: beige; }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* center in viewport */
+  height: 30vh;
+  margin: 250px auto;
+  padding: 1rem;
+
+  /* constrain width so shadow shows */
+  max-width: 600px;
+
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+
+h1, h2 { margin-top:0; }
+button {
+  padding:0.5rem 1rem; margin:0.5rem;
+  background:#007bff; color:#fff; border:none; cursor:pointer;
+}
+button:hover { background:#0056b3; }
+
+/* INDEX PAGE */
+.access-options { text-align:center; margin-top:2rem; }
+.access-options button { width:200px; }
+
+/* MODAL */
+.modal {
+  display:none; position:fixed; z-index:10; left:0; top:0;
+  width:100%; height:100%; background:rgba(0,0,0,0.5);
+}
+.modal-content {
+  background:#fff; margin:10% auto; padding:2rem; width:300px; position:relative;
+  border-radius:4px; margin-top: 300px;
+}
+.close {
+  position:absolute; right:1rem; top:0.5rem; font-size:1.5rem; cursor:pointer;
+}
+
+/* FEEDBACK FORM */
+form { display:flex; flex-direction:column; }
+form label { margin-top:1rem; }
+form select, form input[type=range], form textarea {
+  margin-top:0.5rem; padding:0.5rem;
+}
+form button { margin-top:1.5rem; }
+
+/* DASHBOARD */
+.dashboard { display:flex; gap:1rem; }
+.chart-panel, .map-panel {
+  flex:1; background:#f9f9f9; padding:1rem; border-radius:4px;
+}
+#map { width:100%; height:400px; }
+
+.front {
+    align-items: center;
+}
+
+.accessbot {
+    border-radius: 5px;
+}
+
+.descript {
+    margin-top: -10px;
+}
+
+#feedback-container {
+  padding-top: 190px;
+  padding-bottom: 190px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+#feedback-page {
+  background-image: url('public/images/metrobadge.png');
+  background-repeat: repeat;
+  background-size: 305px 320px;   /* adjust tile size to taste */
+  padding: 2rem;                 /* keep your existing padding */
+  background-color: rgba(255,255,255,0.9); /* a slight white overlay to keep text legible */
+}
+
+#disclaimer {
+    margin: auto;
+}

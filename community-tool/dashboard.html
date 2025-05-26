@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-sA+e2poJLuV7QYbN8V+vB1p2jT6g0f3p4lzYxNakmfQ="
+    crossorigin=""
+  />
+</head>
+<body>
+  <div class="container dashboard">
+    <div class="chart-panel">
+      <h2>Burglary Trends</h2>
+      <canvas id="lineChart"></canvas>
+    </div>
+    <div class="map-panel">
+      <h2>Ward-Level Burglary Heatmap</h2>
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-mMBPkw0Yg/j5Pn0Bt3QlHhg/85vG3W5tAM3s65RjOcM="
+    crossorigin=""
+  ></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // 1) Line Chart (dummy data)
+    const ctx = document.getElementById('lineChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [{
+          label: 'Burglary Incidents',
+          data: [30,25,40,35,50,45],
+          borderColor: 'rgba(75,192,192,1)',
+          tension: 0.4,
+          fill: false
+        }]
+      },
+      options: { responsive: true }
+    });
+
+    // 2) Leaflet Map & Choropleth
+    const map = L.map('map').setView([51.5074, -0.1278], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    fetch('data/ward_choro.json')
+      .then(r => r.json())
+      .then(geojson => {
+        L.geoJSON(geojson, {
+          style: f => ({
+            fillColor: getColor(f.properties.count),
+            weight: 1, color: '#fff', fillOpacity: 0.7
+          })
+        }).addTo(map);
+      });
+
+    function getColor(d) {
+      return d>50 ? '#800026' :
+             d>40 ? '#BD0026' :
+             d>30 ? '#E31A1C' :
+             d>20 ? '#FC4E2A' :
+             d>10 ? '#FD8D3C' :
+                    '#FEB24C';
+    }
+  </script>
+</body>
+</html>

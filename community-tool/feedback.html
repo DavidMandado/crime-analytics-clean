@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Safety Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="feedback-page">
+  <div id="feedback-container" class="container">
+    <h1>Safety Feedback</h1>
+    <h4 class="descript">Please share on this form so our police force can be more helpful and integrated in the community</h4>
+    <h5 id="disclaimer">Any answers and content discussed is encrypted and anonimized on submission and will be kept that way</h6>
+    <form id="survey-form">
+      <label>1. How safe do you feel in your area? <span>(1 = Very Unsafe, 5 = Very Safe)</span></label>
+      <input type="range" name="safety" min="1" max="5" value="3">
+
+      <label>2. How satisfied are you with police response times? <span>(1 = Very Unsatisfied, 5 = Very Satisfied)</span></label>
+      <input type="range" name="response" min="1" max="5" value="3">
+
+      <label>3. What concerns you most about safety?</label>
+      <textarea name="concerns" rows="3" placeholder="Your thoughts…"></textarea>
+
+      <label>4. Any other comments or suggestions?</label>
+      <textarea name="other" rows="2" placeholder="Optional"></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('survey-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Here you’d send `new FormData(e.target)` to your backend.
+      // For demo, we simply redirect:
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>
