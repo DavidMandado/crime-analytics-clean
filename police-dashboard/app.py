@@ -196,6 +196,6 @@ def update_maps(n_clicks, selected_ward, level, mode, past_range, pred_horizon, 
 if __name__ == "__main__":
     app.run(debug=True)
 
-# Developed by David Mandado May-June 2025
+# by David Mandado May-June 2025
 # Notes:
 # - 
