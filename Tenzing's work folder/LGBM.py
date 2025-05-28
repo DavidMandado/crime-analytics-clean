@@ -80,7 +80,7 @@ combined_df = pd.merge(
     how='left'
 )
 
-# 4. Now merge with lag/IMD/population features
+# Now merge with lag/IMD/population features
 combined_df = pd.merge(
     combined_df,
     new_data_df,
@@ -122,7 +122,7 @@ print(combined_df.head())
 x = combined_df[features].fillna(0)
 y = combined_df[multi_y_cols]
 
-# STEP 3: Train-test split
+# Train-test split
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 
 def objective(trial):
