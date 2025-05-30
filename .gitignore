@@ -1,3 +1,9 @@
-*.db
+# Ignore all Python venvs & caches
+**/.venv/
+**/__pycache__/
+
+# Ignore any CSVs (we’ll keep data out of Git)
 *.csv
-*.geojson
+
+# Ignore our mirror‐clone directory
+cleaned-repo.git/
