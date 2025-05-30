@@ -4,6 +4,7 @@
 
 # Ignore any CSVs (we’ll keep data out of Git)
 *.csv
+*.json
 
 # Ignore our mirror‐clone directory
 cleaned-repo.git/
