@@ -1,10 +1,12 @@
-# Ignore all Python venvs & caches
+# drop all big data & caches
+*.db
+*.csv
+*.geojson
+*.json
+
+# python venvs & caches
 **/.venv/
 **/__pycache__/
 
-# Ignore any CSVs (we’ll keep data out of Git)
-*.csv
-*.json
-
-# Ignore our mirror‐clone directory
+# your mirror clone folder (if present)
 cleaned-repo.git/
